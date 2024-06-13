@@ -1,0 +1,155 @@
+:root {
+  /* Colors */
+  --black: #000;
+  --white: #fff;
+  --neutral-50: #f9f8f9;
+  --neutral-100: #f4f1f2;
+  --neutral-200: #eeebeb;
+  --neutral-300: #e8e4e5;
+  --neutral-400: #e3dddf;
+  --neutral-500: #ddd6d8;
+  --neutral-600: #b6a6ab;
+  --neutral-700: #8e777e;
+  --neutral-800: #5f4f54;
+  --neutral-900: #30272a;
+  --neutral-950: #181415;
+  --primary-50: #fdf5f7;
+  --primary-100: #fbebef;
+  --primary-200: #f9e2e8;
+  --primary-300: #f6d8e0;
+  --primary-400: #f4ced8;
+  --primary-500: #f2c4d0;
+  --primary-600: #e588a0;
+  --primary-700: #d84c71;
+  --primary-800: #b3284c;
+  --primary-900: #781a33;
+  --primary-950: #3c0d19;
+}
+
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing. */
+/* force styling of type through styling, rather than elements. */
+/* prevent grid and flex items from spilling out of their container. */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  min-width: 0;
+}
+
+/* dark mode user-agent-styles. */
+/* 1 Rem = 10px. */
+html {
+  color-scheme: dark light;
+  font-size: 62.5%;
+}
+
+/* min body height. */
+body {
+  min-height: 100dvh;
+  background-color: var(--neutral-950);
+}
+
+/* balance headings across multiple lines into an even block. */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Bebas Neue";
+}
+
+/* prevent text orphans (single words on last line). */
+p {
+  text-wrap: pretty;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Encode Sans Condensed";
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Font classes */
+.headings-lineheight {
+  line-height: 93%;
+}
+
+/* Headings */
+.h1-web {
+  font-size: 6.1rem;
+}
+
+.h1-mobile {
+  font-size: 4.8rem;
+}
+
+.h2-web {
+  font-size: 4.8rem;
+}
+
+.h2-mobile {
+  font-size: 3.9rem;
+}
+
+.h3-web {
+  font-size: 3.9rem;
+}
+
+.h3-mobile {
+  font-size: 3.1rem;
+}
+
+.h4-web {
+  font-size: 3.1rem;
+}
+
+.h4-mobile {
+  font-size: 2.5rem;
+}
+
+/* Paragraph */
+
+.p-web-big {
+  font-size: 1.6rem;
+}
+
+.p-web-small {
+  font-size: 1.3rem;
+}
+
+.p-mobile-big {
+  font-size: 1.4rem;
+}
+
+.p-mobile-small {
+  font-size: 1.1rem;
+}
+
+.p-regular {
+  font-weight: 400;
+}
+
+.p-medium {
+  font-weight: 500;
+}
+
+.p-semibold {
+  font-weight: 600;
+}
+
+.p-bold {
+  font-weight: 700;
+}
