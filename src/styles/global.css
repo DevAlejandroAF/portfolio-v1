@@ -24,23 +24,41 @@
   --primary-800: #b3284c;
   --primary-900: #781a33;
   --primary-950: #3c0d19;
+  /* Headings */
+  --headings-lineheight: 93%;
+  --h1-web: 6.1rem;
+  --h1-mobile: 4.8rem;
+  --h2-web: 4.8rem;
+  --h2-mobile: 3.9rem;
+  --h3-web: 3.9rem;
+  --h3-mobile: 3.1rem;
+  --h4-web: 3.1rem;
+  --h4-mobile: 2.5rem;
+  /* Paragraph */
+  --p-web-big: 1.6rem;
+  --p-web-small: 1.3rem;
+  --p-mobile-big: 1.4rem;
+  --p-mobile-small: 1.1rem;
+  --p-regular: 400;
+  --p-medium: 500;
+  --p-semibold: 600;
+  --p-bold: 700;
 }
 
+/* CSS RESET 2024 */
+
+/* remove default spacing. */
+/* force styling of type through styling, rather than elements. */
 /* makes sizing simpler */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-/* remove default spacing. */
-/* force styling of type through styling, rather than elements. */
-/* prevent grid and flex items from spilling out of their container. */
-* {
-  margin: 0;
-  padding: 0;
-  font: inherit;
-  min-width: 0;
 }
 
 /* dark mode user-agent-styles. */
@@ -56,14 +74,11 @@ body {
   background-color: var(--neutral-950);
 }
 
-/* balance headings across multiple lines into an even block. */
-h1,
-h2,
-h3,
-h4 {
-  text-wrap: balance;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-family: "Bebas Neue";
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 /* prevent text orphans (single words on last line). */
@@ -73,83 +88,36 @@ p {
   font-family: "Encode Sans Condensed";
 }
 
+/* balance headings across multiple lines into an even block. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Bebas Neue";
+}
+
 /* responsive images/videos */
 img,
 picture,
 svg,
 video {
-  display: block;
+  height: auto;
   max-width: 100%;
 }
 
-/* Font classes */
-.headings-lineheight {
-  line-height: 93%;
-}
+@media (prefers-reduced-motion: reduce) {
 
-/* Headings */
-.h1-web {
-  font-size: 6.1rem;
-}
-
-.h1-mobile {
-  font-size: 4.8rem;
-}
-
-.h2-web {
-  font-size: 4.8rem;
-}
-
-.h2-mobile {
-  font-size: 3.9rem;
-}
-
-.h3-web {
-  font-size: 3.9rem;
-}
-
-.h3-mobile {
-  font-size: 3.1rem;
-}
-
-.h4-web {
-  font-size: 3.1rem;
-}
-
-.h4-mobile {
-  font-size: 2.5rem;
-}
-
-/* Paragraph */
-
-.p-web-big {
-  font-size: 1.6rem;
-}
-
-.p-web-small {
-  font-size: 1.3rem;
-}
-
-.p-mobile-big {
-  font-size: 1.4rem;
-}
-
-.p-mobile-small {
-  font-size: 1.1rem;
-}
-
-.p-regular {
-  font-weight: 400;
-}
-
-.p-medium {
-  font-weight: 500;
-}
-
-.p-semibold {
-  font-weight: 600;
-}
-
-.p-bold {
-  font-weight: 700;
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition: none;
+  }
 }
