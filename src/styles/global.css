@@ -96,6 +96,7 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
+  font: inherit;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-family: "Bebas Neue";
 }

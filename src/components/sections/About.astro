@@ -1,13 +1,60 @@
 ---
-
 ---
 
 <section class="about" id="about">
-  <h2>About</h2>
+  <div class="container">
+    <div class="greeting-container">
+      <p class="greeting">Hola 👋, <br>Soy Alejandro Ávila</p><br>
+      <h4 class="heading-4">Desarrollador web <br/>y Diseñador gráfico</h4>
+    </div>
+    <div class="paragraph-container">
+      <p class="paragraph">Soy un apasionado de la tecnología y el diseño. Autodidacta, con una mente curiosa y siempre dispuesto a aprender.</p><br>
+      <p class="paragraph">Gracias a mis conocimientos en programación y habilidades en diseño gráfico me permiten crear soluciones efectivas y atractivas para los usuarios.</p><br>
+      <p class="paragraph">Me apasiona crear interfaces intuitivas y estéticamente agradables, usando nuevas tecnologías, con el objetivo de generar soluciones innovadoras que optimicen las interacciones y mejoren la experiencia de los usuarios.</p>
+    </div>
+  </div>
 </section>
 
 <style>
-  .about {
-    margin-top: 1rem;
+.about {
+    margin-top: 3rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 1rem;
+  gap: 2rem;
+}
+
+@media (width < 920px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
   }
+}
+
+.greeting-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.greeting {
+  font-size: var(--p-web-big);
+  font-weight: var(--p-medium);
+}
+
+.heading-4 {
+  font-size: var(--h4-web);
+  line-height: var(--headings-lineheight);
+}
+
+.paragraph {
+  font-size: var(--p-web-big);
+  font-weight: var(--p-regular);
+}
 </style>
