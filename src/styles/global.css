@@ -24,6 +24,11 @@
   --primary-800: #b3284c;
   --primary-900: #781a33;
   --primary-950: #3c0d19;
+  /* Gradient */
+  --low-linear-gradient: linear-gradient(0deg, rgba(60, 13, 25, 0.25) 0%, rgba(242, 196, 208, 0.25) 100%);
+  /* Font */
+  --headings-font: "Bebas Neue", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --paragraph-font: "Encode Sans Condensed", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   /* Headings */
   --headings-lineheight: 93%;
   --h1-web: 6.1rem;
@@ -34,6 +39,10 @@
   --h3-mobile: 3.1rem;
   --h4-web: 3.1rem;
   --h4-mobile: 2.5rem;
+  --h5-web: 2.5rem;
+  --h5-mobile: 2rem;
+  --h6-web: 2rem;
+  --h6-mobile: 1.6rem;
   /* Paragraph */
   --p-web-big: 1.6rem;
   --p-web-small: 1.3rem;
@@ -84,8 +93,7 @@ select {
 /* prevent text orphans (single words on last line). */
 p {
   text-wrap: pretty;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-family: "Encode Sans Condensed";
+  font-family: var(--paragraph-font);
 }
 
 /* balance headings across multiple lines into an even block. */
@@ -97,8 +105,7 @@ h5,
 h6 {
   text-wrap: balance;
   font: inherit;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-family: "Bebas Neue";
+  font-family: var(--headings-font);
 }
 
 /* responsive images/videos */

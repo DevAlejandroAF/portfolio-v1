@@ -1,0 +1,50 @@
+---
+import Button from './Button.astro';
+import {links} from '../data/data.ts';
+---
+
+<nav class="nav">
+  <div class="nav-container">
+    <div class="nav-icon">
+      <a href="#home"><img src="/AW-LOGO.svg" alt="Logo"></a>
+    </div>
+    <div class="links-container">
+      <ul>
+        {
+          links.map((link) => (
+          <li><Button name={link.name} link={link.link}/></li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 2rem;
+  }
+
+  .nav-icon {
+    color: var(--white);
+    max-width: 7rem;
+  }
+
+  .links-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .links-container ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+    list-style: none;
+  }
+
+</style>

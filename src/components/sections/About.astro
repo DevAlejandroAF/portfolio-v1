@@ -1,23 +1,47 @@
 ---
+import TechnologyCard from '../TechnologyCard.astro';
+import { technologies } from '../../data/data.ts';
 ---
 
 <section class="about" id="about">
   <div class="container">
-    <div class="greeting-container">
-      <p class="greeting">Hola 👋, <br>Soy Alejandro Ávila</p><br>
-      <h4 class="heading-4">Desarrollador web <br/>y Diseñador gráfico</h4>
-    </div>
-    <div class="paragraph-container">
-      <p class="paragraph">Soy un apasionado de la tecnología y el diseño. Autodidacta, con una mente curiosa y siempre dispuesto a aprender.</p><br>
-      <p class="paragraph">Gracias a mis conocimientos en programación y habilidades en diseño gráfico me permiten crear soluciones efectivas y atractivas para los usuarios.</p><br>
-      <p class="paragraph">Me apasiona crear interfaces intuitivas y estéticamente agradables, usando nuevas tecnologías, con el objetivo de generar soluciones innovadoras que optimicen las interacciones y mejoren la experiencia de los usuarios.</p>
+    <div class="composition-container">
+      <div class="profile-container">
+        <div class="greeting-container">
+          <p class="greeting">Hola 👋, <br>Soy Alejandro Ávila</p><br>
+          <h4 class="heading-4">Desarrollador web <br/>y Diseñador gráfico</h4>
+        </div>
+        <div class="paragraph-container">
+          <p class="paragraph">Soy un apasionado de la tecnología y el diseño. Autodidacta, con una mente curiosa y siempre dispuesto a aprender.</p><br>
+          <p class="paragraph">Gracias a mis conocimientos en programación y habilidades en diseño gráfico me permiten crear soluciones efectivas y atractivas para los usuarios.</p><br>
+          <p class="paragraph">Me apasiona crear interfaces intuitivas y estéticamente agradables, usando nuevas tecnologías, con el objetivo de generar soluciones innovadoras que optimicen las interacciones y mejoren la experiencia de los usuarios.</p>
+        </div>
+      </div>
+      <div class="window-container">
+        <div class="window-top">
+          <div class="buttons">
+            <div class="ui-button"></div>
+            <div class="ui-button"></div>
+            <div class="ui-button"></div>
+          </div>
+        </div>
+        <div class="window-bottom">
+          <div class="tech-container">
+            {
+            technologies.map((technology) => (
+            <TechnologyCard name={technology.name} icon={technology.icon} />
+            ))
+            }
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
 .about {
-    margin-top: 3rem;
+    margin-top: 11rem;
 }
 
 .container {
@@ -37,10 +61,35 @@
   }
 }
 
+.composition-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5rem;
+}
+
+@media (width < 920px) {
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .greeting-container {
   display: flex;
   flex-direction: column;
   justify-content: left;
+  min-width: 20.5rem;
+}
+
+.paragraph-container {
+  max-width: 80rem;
 }
 
 .greeting {
@@ -57,4 +106,43 @@
   font-size: var(--p-web-big);
   font-weight: var(--p-regular);
 }
+
+.window-container {
+  margin-top: 7rem;
+}
+
+.window-top {
+  border: .1rem solid var(--primary-50);
+  border-radius: 1rem 1rem 0 0;
+  background: var(--low-linear-gradient);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin: 1rem 0 1rem 1rem;
+  gap: .5rem;
+}
+
+.ui-button {
+  background: var(--primary-50);
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+}
+
+.window-bottom {
+  border: .1rem solid var(--primary-50);
+  border-radius: 0 0 1rem 1rem;
+}
+
+.tech-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 </style>

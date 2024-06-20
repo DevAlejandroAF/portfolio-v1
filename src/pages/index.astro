@@ -2,11 +2,21 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Home from "../components/sections/Home.astro";
 import About from "../components/sections/About.astro";
+import Navbar from "../components/Navbar.astro";
+import Projects from "../components/sections/Projects.astro";
+import Experience from "../components/sections/Experience.astro";
+import Contact from "../components/sections/Contact.astro";
+import Footer from "../components/sections/Footer.astro";
 ---
 
 <MainLayout
   title="Alejandro Ávila Portfolio | Web Developer & Graphic Designer"
 >
   <Home/>
+  <Navbar/>
   <About/>
+  <Projects/>
+  <Experience/>
+  <Contact/>
+  <Footer/>
 </MainLayout>
