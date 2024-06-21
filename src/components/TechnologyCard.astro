@@ -7,7 +7,7 @@ interface Props {
 const { name, icon } = Astro.props as Props;
 ---
 
-<div class="tech-container">
+<div class="container">
   <div class="tech">
     <img src={icon} alt={name}/>
     <p>{name}</p>
@@ -15,7 +15,7 @@ const { name, icon } = Astro.props as Props;
 </div>
 
 <style>
-  .tech-container {
+  .container {
     margin: 2rem;
   }
 
@@ -31,5 +31,10 @@ const { name, icon } = Astro.props as Props;
     font-family: var(--paragraph-font);
     font-size: var(--p-web-big);
     font-weight: var(--p-regular);
+  }
+  
+  .tech img {
+    margin-bottom: .8rem;
+    width: 4.5rem;
   }
 </style>

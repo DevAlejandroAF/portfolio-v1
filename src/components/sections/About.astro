@@ -54,7 +54,7 @@ import { technologies } from '../../data/data.ts';
   gap: 2rem;
 }
 
-@media (width < 920px) {
+@media (width < 1150px) {
   .container {
     flex-direction: column;
     align-items: center;
@@ -74,7 +74,7 @@ import { technologies } from '../../data/data.ts';
   gap: 5rem;
 }
 
-@media (width < 920px) {
+@media (width < 1150px) {
   .profile-container {
     flex-direction: column;
     align-items: center;
@@ -90,6 +90,12 @@ import { technologies } from '../../data/data.ts';
 
 .paragraph-container {
   max-width: 80rem;
+}
+
+@media (width < 850px) {
+  .paragraph-container {
+    max-width: 50rem;
+  }
 }
 
 .greeting {
@@ -109,6 +115,20 @@ import { technologies } from '../../data/data.ts';
 
 .window-container {
   margin-top: 7rem;
+  max-width: 106rem;
+  overflow: hidden;
+}
+
+@media (width < 1150px) {
+  .window-container {
+    max-width: 80rem;
+  }
+}
+
+@media (width < 850px) {
+  .window-container {
+    max-width: 50rem;
+  }
 }
 
 .window-top {

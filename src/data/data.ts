@@ -11,6 +11,13 @@ interface techInterface {
   icon: string;
 }
 
+interface socialInterface {
+  id: number;
+  name: string;
+  icon: string;
+  link: string;
+}
+
 const links: linkInterface[] = [
   {
     id: 1,
@@ -87,7 +94,23 @@ const technologies: techInterface[] = [
   }
 ]
 
+const social: socialInterface[] = [
+  {
+    id: 1,
+    name: 'Github',
+    icon: 'icons/github.svg',
+    link: 'https://github.com/DevAlejandroAF'
+  },
+  {
+    id: 2,
+    name: 'LinkedIn',
+    icon: 'icons/linkedin.svg',
+    link: 'https://linkedin.com/in/alejandroaf95/'
+  }
+]
+
 export {
   links,
   technologies,
+  social,
 }
