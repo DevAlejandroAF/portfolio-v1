@@ -1,12 +1,64 @@
 ---
-
+import ProjectBox from "../ProjectBox.astro";
+import { projects } from "../../data/data";
 ---
 
-<section>
+<section class="projects" id="projects">
   <div class="container">
-    <h1>Projects</h1>
+    <div class="title-container">
+      <h2 class="header-2">Proyectos.</h2>
+      <p class="paragraph-h">Estos son algunos de mis proyectos.</p>
+    </div>
+    <div class="boxes-container">
+      {
+      projects.map((project) => (
+      <ProjectBox title={project.title} shortDescription={project.shortDescription} tags={project.tags} link={project.link} image={project.image}/>
+      ))
+      }
+    </div>
   </div>
 </section>
 
 <style>
+.projects {
+  margin-top: 11rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 106rem;
+}
+
+@media (width < 1150px) {
+  .container {
+    max-width: 80rem;
+  }
+}
+
+@media (width < 850px) {
+  .container {
+    max-width: 50rem;
+  }
+}
+
+.title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-2 {
+  font-size: var(--h2-web);
+  line-height: var(--headings-lineheight);
+}
+
+.paragraph-h {
+  font-size: var(--p-web-big);
+  font-weight: var(--p-regular);
+}
+
 </style>

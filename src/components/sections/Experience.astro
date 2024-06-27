@@ -1,12 +1,52 @@
 ---
-
+import ExperienceCard from '../ExperienceCard.astro';
+import { experiences } from '../../data/data';
 ---
 
-<section>
+<section class="experience" id="experience">
   <div class="container">
-    <h1>Experience</h1>
+    <div class="title-container">
+      <h2 class="header-2">Experiencia Laboral.</h2>
+    </div>
+    <div class="experiences-container">
+      {
+      experiences.map((experience) => (
+      <ExperienceCard company={experience.company} position={experience.position} date={experience.date} description={experience.description} tags={experience.tags} link={experience.link}/>
+      ))
+      }
+    </div>
   </div>
 </section>
 
 <style>
+
+.experience {
+  margin-top: 7rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 106rem;
+}
+
+@media (width < 1150px) {
+  .container {
+    max-width: 80rem;
+  }
+}
+
+@media (width < 850px) {
+  .container {
+    max-width: 50rem;
+  }
+}
+
+.header-2 {
+  font-size: var(--h2-web);
+  line-height: var(--headings-lineheight);
+}
+
 </style>

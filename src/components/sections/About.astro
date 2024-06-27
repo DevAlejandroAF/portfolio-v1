@@ -24,6 +24,9 @@ import { technologies } from '../../data/data.ts';
             <div class="ui-button"></div>
             <div class="ui-button"></div>
           </div>
+          <div class="window-title">
+            <p>Tecnologías</p>
+          </div>
         </div>
         <div class="window-bottom">
           <div class="tech-container">
@@ -135,6 +138,20 @@ import { technologies } from '../../data/data.ts';
   border: .1rem solid var(--primary-50);
   border-radius: 1rem 1rem 0 0;
   background: var(--low-linear-gradient);
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+.window-title {
+  margin-left: 1rem;
+}
+
+.window-title p {
+  font-family: var(--paragraph-font);
+  font-size: var(--p-web-small);
+  font-weight: var(--p-regular);
 }
 
 .buttons {

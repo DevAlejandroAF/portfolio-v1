@@ -1,0 +1,104 @@
+---
+interface experienceInterface {
+  id: number;
+  company: string;
+  position: string;
+  date: string;
+  description: string;
+  tags: string[];
+  link: string;
+}
+
+const { company, position, date, description, tags, link } = Astro.props as experienceInterface;
+---
+
+<div class="experience-container">
+  <div class="date-container">
+    <p class="p-dark">{date}</p>
+  </div>
+  <div class="company-container">
+    <p class="p-white">{position}</p>
+    <a class="p-dark" href={link} target="_blank">{company}</a>
+  </div>
+  <div class="description-container">
+    <p class="description">{description}</p>
+    <div class="tags-container">
+      {
+      tags.map((tag) => (
+        <div class="tag">{tag}</div>
+      ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+.experience-container {
+  background-color: var(--neutral-900);
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  border-radius: 1rem;
+  margin-top: 6rem;
+  max-height: 40rem;
+  overflow: hidden;
+}
+
+@media (width < 1150px) {
+  .experience-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 50rem;
+  }
+}
+
+.date-container {
+  margin: 1.5rem;
+}
+
+.company-container {
+  margin: 1.5rem;
+}
+
+.description-container {
+  margin: 1.5rem;
+}
+
+.p-dark {
+  font-family: var(--paragraph-font);
+  font-size: var(--p-web-big);
+  font-weight: var(--p-regular);
+  color: var(--neutral-600);
+  text-decoration: none;
+}
+
+.p-white {
+  font-family: var(--paragraph-font);
+  font-size: var(--p-web-big);
+  font-weight: var(--p-semibold);
+}
+
+.description {
+  font-family: var(--paragraph-font);
+  font-size: var(--p-web-big);
+  font-weight: var(--p-regular);
+}
+
+.tags-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.tag {
+  border: .1rem solid var(--primary-50);
+  border-radius: 3rem;
+  max-width: fit-content;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  font-family: var(--paragraph-font);
+  font-size: var(--p-web-big);
+  font-weight: var(--p-regular);
+}
+</style>

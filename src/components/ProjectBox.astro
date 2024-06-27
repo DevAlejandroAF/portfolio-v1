@@ -1,0 +1,119 @@
+---
+import Button from "./Button.astro";
+
+interface projectInterface {
+  id: number;
+  title: string;
+  shortDescription: string;
+  description: string;
+  tags: string[];
+  link: string;
+  image: string;
+}
+
+const { title, shortDescription, tags, link, image } = Astro.props as projectInterface;
+---
+
+<div class="main-box">
+  <div class="text-box">
+    <h2 class="heading-2">{title}</h2>
+    <p class="paragraph-b">{shortDescription}</p>
+    <p class="paragraph-b">Labor.</p>
+    <ul class="tag-list">
+      {
+      tags.map((tag) => (
+        <li>{tag}</li>
+      ))
+      }
+    </ul>
+    <div class="btn-container">
+      <div class="btn">
+        <Button name='Saber más' link={link}/>
+      </div>
+    </div>
+  </div>
+  <div class="img-box">
+    <img src={image} alt={title} />
+  </div>
+</div>
+
+<style>
+.main-box {
+  background-color: var(--neutral-900);
+  border-radius: 1rem;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+  max-height: 45rem;
+}
+
+@media (width < 1150px) {
+  .main-box {
+    flex-direction: column;
+    max-height: 60rem;
+  }
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  margin: 2rem;
+}
+
+@media (width < 1150px) {
+  .text-box {
+    gap: 1rem;
+  }
+}
+
+.heading-2 {
+  font-size: var(--h2-web);
+  line-height: var(--headings-lineheight);
+}
+
+.paragraph-b {
+  font-size: var(--p-web-big);
+  font-weight: var(--p-regular);
+}
+
+.tag-list {
+  font-family: var(--paragraph-font);
+  font-size: var(--p-web-big);
+  font-weight: var(--p-semibold);
+  list-style: none;
+}
+
+.img-box {
+  margin: 2rem 2rem 0 0;
+}
+
+@media (width < 1150px) {
+  .img-box {
+    margin: 1rem 1rem 0 1rem;
+  }
+}
+
+@media (width < 850px) {
+  .img-box {
+    max-width: 50rem;
+  }
+}
+
+.img-box img {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.btn {
+  max-width: 15rem;
+}
+</style>

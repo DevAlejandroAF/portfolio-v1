@@ -18,25 +18,50 @@ interface socialInterface {
   link: string;
 }
 
+interface projectInterface {
+  id: number;
+  title: string;
+  shortDescription: string;
+  description: string;
+  tags: string[];
+  link: string;
+  image: string;
+}
+
+interface experienceInterface {
+  id: number;
+  company: string;
+  position: string;
+  date: string;
+  description: string;
+  tags: string[];
+  link: string;
+}
+
 const links: linkInterface[] = [
   {
     id: 1,
-    name: 'Home',
+    name: 'Inicio',
     link: '#home'
   },
   {
     id: 2,
-    name: 'About',
+    name: 'Acerca',
     link: '#about'
   },
   {
     id: 3,
-    name: 'Projects',
+    name: 'Proyectos',
     link: '#projects'
   },
   {
     id: 4,
-    name: 'Contact',
+    name: 'Experiencia',
+    link: '#experience'
+  },
+  {
+    id: 5,
+    name: 'Contacto',
     link: '#contact'
   }
 ]
@@ -109,8 +134,35 @@ const social: socialInterface[] = [
   }
 ]
 
+const projects: projectInterface[] = [
+  {
+    id: 1,
+    title: 'Dashboard',
+    shortDescription: 'Esta aplicación web es una herramienta intuitiva y visualmente atractiva que muestra información relevante sobre las ventas del mes, diseñada para apoyar tomas de futuras decisiones.',
+    description: 'Esta aplicación web es una herramienta intuitiva y visualmente atractiva que muestra información relevante sobre las ventas del mes, diseñada para apoyar tomas de futuras decisiones.',
+    tags: ['Desarrollo Full-stack', 'Diseño UX/UI'],
+    link: '/dashboard',
+    image: '/images/dashboard.jpeg'
+  }
+]
+
+const experiences: experienceInterface[] = [
+  {
+    id: 1,
+    company: 'ETB S.A ESP',
+    position: 'Aprendiz Universitario',
+    date: 'JUN 2022 - ENE 2023',
+    description: `Desarrollo de aplicación estilo Dashboard para la visualización de datos en el área de telefonía móvil prepago de la empresa.
+Esta aplicación fue desarrollada en el lenguaje Python, usando Pandas, el framework Flask y Plotly (Dash) para la generación de gráficos. Desplegada mediante GitHub y Railway.
+Demas tareas propias del área.`,
+    tags: ['HTML & CSS', 'Python', 'Flask', 'Plotly', 'Excel', 'Access'],
+    link: 'https://etb.com'
+  }
+] 
 export {
   links,
   technologies,
   social,
+  projects,
+  experiences,
 }
