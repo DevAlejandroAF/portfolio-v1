@@ -1,12 +1,70 @@
 ---
+import Button from "../Button.astro";
 
 ---
 
-<section>
+<section class="contact" id="contact">
   <div class="container">
-    <h1>Contact section</h1>
+    <div class="composition">
+      <p>¿Tienes algo en mente?</p>
+      <h2>Trabajemos juntos 🤝</h2>
+      <form method="POST" action="mailto:alejandroavi95@hotmail.com">
+        <div class="button-container">
+          <Button name="Contacto" type="submit"/>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
 <style>
+.contact {
+  margin-top: 7rem;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 106rem;
+  border-top: .2rem solid var(--primary-50);  
+}
+
+@media (width < 1150px) {
+  .container {
+    max-width: 80rem;
+  }
+}
+
+@media (width < 850px) {
+  .container {
+    max-width: 50rem;
+  }
+}
+
+.composition {
+  margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.composition p {
+  font-family: var(--paragraph-font);
+  font-size: var(--p-web-big);
+  font-weight: var(--p-regular);
+}
+
+.composition h2 {
+  font-family: var(--headings-font);
+  font-size: var(--h2-web);
+}
+
+.button-container {
+  margin-top: 3rem;
+  max-width: fit-content;
+}
 </style>
+
+<script>
+document.querySelector("form").addEventListener('submit',(e)=>e.preventDefault());
+</script>

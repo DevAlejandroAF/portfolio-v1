@@ -1,5 +1,5 @@
 ---
-import ProjectBox from "../ProjectBox.astro";
+import ProjectCard from "../ProjectCard.astro";
 import { projects } from "../../data/data";
 ---
 
@@ -9,12 +9,21 @@ import { projects } from "../../data/data";
       <h2 class="header-2">Proyectos.</h2>
       <p class="paragraph-h">Estos son algunos de mis proyectos.</p>
     </div>
-    <div class="boxes-container">
-      {
-      projects.map((project) => (
-      <ProjectBox title={project.title} shortDescription={project.shortDescription} tags={project.tags} link={project.link} image={project.image}/>
-      ))
-      }
+    <div class="gallery">
+      <div class="cards-container">
+        {
+        projects.map((project) => (
+        <div class="card">
+          <ProjectCard title={project.title} shortDescription={project.shortDescription} tags={project.tags} link={project.link} image={project.image}/>
+        </div>
+        ))
+        }
+      </div>
+      <div class="scroll-text">
+        <img class="arrow" src="/icons/left-arrow.svg" alt="left-arrow">
+        <h4 class="header-4">scroll</h2>
+        <img class="arrow" src="/icons/right-arrow.svg" alt="right arrow">
+      </div>
     </div>
   </div>
 </section>
@@ -61,4 +70,47 @@ import { projects } from "../../data/data";
   font-weight: var(--p-regular);
 }
 
+.cards-container {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: scroll;
+}
+
+.card {
+  min-width: 100rem;
+  margin-right: 2rem;
+}
+
+@media (width < 1150px) {
+  .card {
+    min-width: 74rem;
+  }
+}
+
+@media (width < 850px) {
+  .card {
+    min-width: 44rem;
+  }
+}
+
+.scroll-text {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.scroll-text .header-4 {
+  font-size: var(--h4-web);
+  line-height: var(--headings-lineheight);
+}
+
+.scroll-text .arrow {
+  max-width: 3.5rem;
+}
+
 </style>
+
+<script>
+</script>

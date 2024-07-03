@@ -1,13 +1,14 @@
 ---
 interface Props {
   name: string;
-  link: string;
+  link?: string;
+  type?: string;
 }
 
-const {name, link} = Astro.props as Props
+const {name, link, type} = Astro.props as Props
 ---
 
-<a class="button" href={link}>{name}</a>
+<a type={type} class="button" href={link}>{name}</a>
 
 <style>
   .button {

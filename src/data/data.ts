@@ -143,6 +143,15 @@ const projects: projectInterface[] = [
     tags: ['Desarrollo Full-stack', 'Diseño UX/UI'],
     link: '/dashboard',
     image: '/images/dashboard.jpeg'
+  },
+  {
+    id: 2,
+    title: 'Dashboard 2',
+    shortDescription: 'Esta aplicación web es una herramienta intuitiva y visualmente atractiva que muestra información relevante sobre las ventas del mes, diseñada para apoyar tomas de futuras decisiones.',
+    description: 'Esta aplicación web es una herramienta intuitiva y visualmente atractiva que muestra información relevante sobre las ventas del mes, diseñada para apoyar tomas de futuras decisiones.',
+    tags: ['Desarrollo Full-stack', 'Diseño UX/UI'],
+    link: '/dashboard',
+    image: '/images/dashboard.jpeg'
   }
 ]
 

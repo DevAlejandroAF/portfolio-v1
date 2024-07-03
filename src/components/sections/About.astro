@@ -28,13 +28,26 @@ import { technologies } from '../../data/data.ts';
             <p>Tecnologías</p>
           </div>
         </div>
-        <div class="window-bottom">
-          <div class="tech-container">
-            {
-            technologies.map((technology) => (
-            <TechnologyCard name={technology.name} icon={technology.icon} />
-            ))
-            }
+        <div class="window-content">
+          <div class="tech-container marquee">
+            <ul class="marquee__content">
+              {
+              technologies.map((technology) => (
+              <li>
+                <TechnologyCard name={technology.name} icon={technology.icon} />
+              </li>
+              ))
+              }
+            </ul>
+            <ul class="marquee__content" aria-hidden="true">
+              {
+              technologies.map((technology) => (
+              <li>
+                <TechnologyCard name={technology.name} icon={technology.icon} />
+              </li>
+              ))
+              }
+            </ul>
           </div>
         </div>
       </div>
@@ -170,7 +183,7 @@ import { technologies } from '../../data/data.ts';
   height: 1rem;
 }
 
-.window-bottom {
+.window-content {
   border: .1rem solid var(--primary-50);
   border-radius: 0 0 1rem 1rem;
 }
@@ -180,6 +193,35 @@ import { technologies } from '../../data/data.ts';
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.marquee {
+  --gap: 1rem;
+  font-family: var(--paragraph-font);
+  font-size: var(--h4-web);
+  display: flex;
+  overflow: hidden;
+  gap: var(--gap);
+  width: 100%;
+}
+
+.marquee__content {
+  list-style: none;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  gap: var(--gap);
+  animation: scroll 15s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
 }
 
 </style>
